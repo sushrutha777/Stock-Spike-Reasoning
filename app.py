@@ -6,7 +6,7 @@ import numpy as np
 st.set_page_config(page_title="Stock Spike Reason Finder", layout="wide")
 st.title("📈 AI-Based Stock Spike Reason Finder")
 
-# --- Predefined 20 stocks ---
+# --- Predefined 20 stocks + Highway Infrastructure ---
 stock_options = {
     "Infosys": "INFY.NS",
     "TCS": "TCS.NS",
@@ -27,7 +27,9 @@ stock_options = {
     "Power Grid": "POWERGRID.NS",
     "Zomato": "ZOMATO.NS",
     "Maruti Suzuki": "MARUTI.NS",
-    "NTPC": "NTPC.NS"
+    "NTPC": "NTPC.NS",
+    # Newly added IPO with spike
+    "Highway Infrastructure": "HILINFRA.NS"
 }
 
 selected_name = st.selectbox("🔍 Choose a stock", list(stock_options.keys()))

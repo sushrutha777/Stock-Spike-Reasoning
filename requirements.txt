@@ -1,8 +1,9 @@
-yfinance
-pandas
-plotly
 streamlit
-feedparser
+pandas
+yfinance
+requests
+beautifulsoup4
+lxml
 snscrape
-transformers
-torch
+nltk
+python-dateutil
