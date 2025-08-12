@@ -1,9 +1,12 @@
 streamlit
 pandas
+numpy
 yfinance
 requests
 beautifulsoup4
 lxml
 snscrape
 nltk
+urllib3
 python-dateutil
+nsepython

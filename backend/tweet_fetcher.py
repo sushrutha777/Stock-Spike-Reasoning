@@ -1,43 +1,41 @@
 # backend/tweet_fetcher.py
-# uses snscrape (no Twitter API required)
-import subprocess
-import sys
-import json
-from datetime import datetime, timedelta
+"""
+Tweet Fetcher
+-------------
+Fetches recent tweets for a given stock keyword using snscrape.
+No Twitter API keys needed.
+"""
 
+import snscrape.modules.twitter as sntwitter
+from typing import List
+import datetime
 
-def fetch_tweets_by_query(query: str, max_tweets: int = 50):
-    """Fetch tweets using snscrape via subprocess and return a list of dicts.
-
-    snscrape must be installed (pip install snscrape), and this runs the command-line scraper.
+def fetch_tweets_by_query(query: str, limit: int = 20) -> List[str]:
     """
-    # Construct command
-    cmd = [
-        sys.executable, "-m", "snscrape.modules.twitter", "TwitterSearch",
-        f"{query}", "--max-results", str(max_tweets), "--jsonl"
-    ]
+    Fetch recent tweets containing the query keyword.
+
+    Args:
+        query (str): The search keyword (e.g., stock name or ticker).
+        limit (int): Maximum number of tweets to fetch.
+
+    Returns:
+        List[str]: A list of tweet texts.
+    """
+    tweets = []
+    since_date = (datetime.datetime.now() - datetime.timedelta(days=2)).strftime('%Y-%m-%d')
+    search_query = f"{query} since:{since_date} lang:en"
 
     try:
-        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
-        if proc.returncode != 0:
-            return []
-        lines = proc.stdout.strip().splitlines()
-        tweets = [json.loads(line) for line in lines if line.strip()]
-        # Simplify tweet objects
-        simplified = []
-        for t in tweets:
-            simplified.append({
-                'date': t.get('date'),
-                'content': t.get('content'),
-                'user': t.get('user', {}).get('username') if t.get('user') else None,
-                'url': t.get('url')
-            })
-        return simplified
+        for i, tweet in enumerate(sntwitter.TwitterSearchScraper(search_query).get_items()):
+            if i >= limit:
+                break
+            tweets.append(tweet.content)
     except Exception as e:
-        print("snscrape error:", e)
-        return []
+        print(f"[Error] Could not fetch tweets: {e}")
+
+    return tweets
 
 
 if __name__ == "__main__":
-    q = "Infosys"
-    print(fetch_tweets_by_query(q, max_tweets=10))
+    test = fetch_tweets_by_query("Zomato", limit=5)
+    print(test)
