@@ -1,0 +1,8 @@
+yfinance
+pandas
+plotly
+streamlit
+feedparser
+snscrape
+transformers
+torch
