@@ -6,19 +6,29 @@ from backend.summarizer import summarize_reason
 import plotly.graph_objects as go
 
 st.set_page_config(page_title="Stock Spike Reason Finder", layout="wide")
-st.title("📈 Stock Spike Reason Finder (100% Free)")
+st.title("📈 Stock Spike Reason Finder")
 
 stocks = [
-    "NVDA",        # Recent spike after earnings
-    "TSLA",        # Frequent big swings
+    "NVDA",       
+    "TSLA",       
     "AAPL", 
     "MSFT", 
     "GOOGL", 
     "AMZN", 
     "INFY.NS", 
-    "RELIANCE.NS", # Recent jump in India
-    "TCS.NS"
+    "RELIANCE.NS",
+    "TCS.NS",
+    "INTA",       # Intapp – ~27%
+    "WBTN",       # Webtoon Entertainment – ~42%
+    "SPNS",       # Sapiens International – ~42%
+    "UAL",        # United Airlines – >10%
+    "SE",         # Sea Ltd. – ~19%
+    "MRCY",       # Mercury Systems – ~23%
+    "ATNF",       # 180 Life Sciences Corp. – ~206%
+    "XFOR",       # X4 Pharmaceuticals – ~82%
+    "APOLLOHOSP.NS"  # Apollo Hospitals – ~6%
 ]
+
 
 col1, col2 = st.columns([2, 1])
 with col1:
