@@ -14,7 +14,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 st.set_page_config(page_title="Stock Spike Reasoning", layout="wide")
 
-st.title("📈 Stock Spike Reasoning (AI Powered)")
+st.title("📈 Stock Spike Reasoning ")
 st.write("Detects stock price spikes and explains them using news + Gemini reasoning.")
 
 # --- Stock Selector ---
@@ -67,12 +67,12 @@ if st.button("🔍 Analyze"):
 
             # AI Reasoning
             stock_info = f"{ticker} moved {last_change_str} in last {days_range} days."
-            st.subheader("🤖 AI Summary (Gemini)")
+            st.subheader("AI Summary")
             with st.spinner("Generating explanation..."):
                 reasoning_text = generate_reasoning(stock_info, headlines, api_key=GEMINI_API_KEY)
             st.write(reasoning_text)
 
-            if st.button("🔄 Regenerate Explanation"):
+            if st.button(" Regenerate Explanation"):
                 with st.spinner("Regenerating..."):
                     reasoning_text = generate_reasoning(stock_info, headlines, api_key=GEMINI_API_KEY)
                 st.write(reasoning_text)
