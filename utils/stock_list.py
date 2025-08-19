@@ -1,7 +1,26 @@
-# 20 Default Stocks (US + India mix)
+# 100+ Default Stocks (US + India mix)
 DEFAULT_STOCKS = [
+    # US Stocks
     "AAPL", "MSFT", "GOOGL", "AMZN", "TSLA",
     "META", "NFLX", "NVDA", "JPM", "V",
+    "MA", "PYPL", "DIS", "ADBE", "CRM",
+    "ORCL", "INTC", "CSCO", "KO", "PEP",
+    "NKE", "WMT", "BAC", "C", "MCD",
+    "XOM", "CVX", "BA", "IBM", "GM",
+    "F", "T", "VZ", "PYPL", "SBUX",
+    "SHOP", "SQ", "SPOT", "TWTR", "UBER",
+    "LYFT", "DOCU", "ZM", "SNAP", "PINS",
+    "ATVI", "EA", "AMD", "MU", "QCOM",
+    
+    # Indian Stocks
     "INFY", "TCS.NS", "RELIANCE.NS", "HDFCBANK.NS", "ICICIBANK.NS",
-    "WIPRO.NS", "SBIN.NS", "HCLTECH.NS", "BAJFINANCE.NS", "LT.NS"
+    "WIPRO.NS", "SBIN.NS", "HCLTECH.NS", "BAJFINANCE.NS", "LT.NS",
+    "TECHM.NS", "MARUTI.NS", "HINDUNILVR.NS", "ITC.NS", "TITAN.NS",
+    "AXISBANK.NS", "KOTAKBANK.NS", "ONGC.NS", "SUNPHARMA.NS", "BHARTIARTL.NS",
+    "ADANIPORTS.NS", "ULTRACEMCO.NS", "JSWSTEEL.NS", "NTPC.NS", "TATASTEEL.NS",
+    "GRASIM.NS", "POWERGRID.NS", "HDFCLIFE.NS", "BRITANNIA.NS", "COALINDIA.NS",
+    "SBILIFE.NS", "DIVISLAB.NS", "NESTLEIND.NS", "HAVELLS.NS", "CIPLA.NS",
+    "BAJAJ-AUTO.NS", "HINDALCO.NS", "EICHERMOT.NS", "M&M.NS", "DRREDDY.NS",
+    "SHREECEM.NS", "BPCL.NS", "TATAMOTORS.NS", "IDEA.NS", "LICHSGFIN.NS",
+    "INDUSINDBK.NS", "BANDHANBNK.NS", "DLF.NS", "COLPAL.NS", "GAIL.NS"
 ]
