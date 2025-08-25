@@ -10,7 +10,7 @@ from utils.stock_list import DEFAULT_STOCKS
 
 # Load env
 load_dotenv()
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY = st.secrets.get("GEMINI_API_KEY") or os.getenv("GEMINI_API_KEY")
 
 st.set_page_config(page_title="Stock Spike Reasoning", layout="wide")
 
