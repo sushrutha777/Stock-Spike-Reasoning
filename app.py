@@ -78,7 +78,7 @@ if st.button("🔍 Analyze"):
                 st.write(reasoning_text)
 
         else:
-            st.info(f"ℹ️ No spike detected for {ticker} in last {days_range} days. Last change: {last_change_str} (Threshold: {threshold}%)")
+            st.info(f"No spike detected for {ticker} in last {days_range} days. Last change: {last_change_str} (Threshold: {threshold}%)")
 
 st.markdown("---")
 st.caption("Built with Streamlit, yfinance, Plotly, Google News RSS, and Gemini API • Team: Sushrutha & Group")
