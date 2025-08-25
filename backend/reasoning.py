@@ -3,7 +3,7 @@ import google.generativeai as genai
 def generate_reasoning(stock_info: str, headlines: list, api_key: str) -> str:
     """Use Gemini API to generate reasoning from news headlines."""
     if not api_key:
-        return "❌ Gemini API key not found."
+        return "Gemini API key not found."
 
     try:
         genai.configure(api_key=api_key)
